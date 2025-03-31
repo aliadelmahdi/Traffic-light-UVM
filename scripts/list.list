@@ -1,33 +1,31 @@
 # interface/
-# │── traffic_light_defines.svh
+# │── traffic_defines.svh
 # │── traffic_if.sv
+# │── shared_pkg.sv
 #
-# design/traffic_light_design/
+# design/traffic_design/
 # │── traffic_light.v
 # │── golden_model.sv
-# │── golden_model_c.cpp
-# │── golden_model_c.h
-# │── golden_model_c.dll
 #
-# design/traffic_light_assertions/
-# │── traffic_light_sva.sv
+# design/traffic_Assertions/
+# │── traffic_sva.sv
 #
 # objects/
-# │── traffic_light_config.sv
-# ├── traffic_light_seq_item.sv
-# ├── traffic_light_main_sequence.sv
-# ├── traffic_light_reset_sequence.sv
+# │── traffic_config.sv
+# ├── traffic_seq_item.sv
+# ├── traffic_main_sequence.sv
+# ├── traffic_reset_sequence.sv
 #
 # top/test/enviroment/
-# │── traffic_light_env.sv
-# │── scoreboard/traffic_light_scoreboard.sv
-# │── coverage_collector/traffic_light_coverage_collector.sv
+# │── traffic_env.sv
+# │── scoreboard/traffic_scoreboard.sv
+# │── coverage_collector/traffic_coverage_collector.sv
 # │
 # ├── agent/
-# │   │── traffic_light_agent.sv
-# │   │── sequencer/traffic_light_sequencer.sv
-# │   │── driver/traffic_light_driver.sv
-# │   │── monitor/traffic_light_monitor.sv
+# │   │── traffic_agent.sv
+# │   │── sequencer/traffic_sequencer.sv
+# │   │── driver/traffic_driver.sv
+# │   │── monitor/traffic_monitor.sv
 # │
 #
 # top/test/
@@ -36,40 +34,41 @@
 # top/
 # │── top.sv
 
-# List of files for the traffic_light testbrh
+# List of files for the traffic testbench
 
 # Interface files
-interface/traffic_light_defines.svh
+interface/traffic_defines.svh
 interface/traffic_if.sv
+interface/shared_pkg.sv
 
 # Design files
-design/traffic_light_design/traffic_light.v
-design/traffic_light_design/golden_model.sv
+design/traffic_design/traffic_light.v
+design/traffic_design/golden_model.sv
 
 # Assertions
-design/traffic_light_Assertions/traffic_light_sva.sv
+design/traffic_Assertions/traffic_sva.sv
 
-# Testbrh objects
-objects/traffic_light_config.sv
-objects/traffic_light_seq_item.sv
-objects/traffic_light_main_sequence.sv
-objects/traffic_light_reset_sequence.sv
+# Testbench objects
+objects/traffic_config.sv
+objects/traffic_seq_item.sv
+objects/traffic_main_sequence.sv
+objects/traffic_reset_sequence.sv
 
 # Driver file
-top/test/enviroment/agent/driver/traffic_light_driver.sv
+top/test/enviroment/agent/driver/traffic_driver.sv
 # Monitor file
-top/test/enviroment/agent/monitor/traffic_light_monitor.sv
-# Sequrer file
-top/test/enviroment/agent/sequencer/traffic_light_sequencer.sv
+top/test/enviroment/agent/monitor/traffic_monitor.sv
+# Sequencer file
+top/test/enviroment/agent/sequencer/traffic_sequencer.sv
 # Agent
-top/test/enviroment/agent/traffic_light_agent.sv
+top/test/enviroment/agent/traffic_agent.sv
 
 # Scoreboard and coverage
-top/test/enviroment/scoreboard/traffic_light_scoreboard.sv
-top/test/enviroment/coverage_collector/traffic_light_coverage_collector.sv
+top/test/enviroment/scoreboard/traffic_scoreboard.sv
+top/test/enviroment/coverage_collector/traffic_coverage_collector.sv
 
 # Environment file
-top/test/enviroment/traffic_light_env.sv
+top/test/enviroment/traffic_env.sv
 
 # Test file
 top/test/test.sv

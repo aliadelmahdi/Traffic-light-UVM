@@ -1,0 +1,419 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /\tb_top#DUT /traffic_sva_inst
+=== Design Unit: work.traffic_sva
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       6         6         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/\tb_top#DUT /traffic_sva_inst/reset_assert
+                     design/traffic_Assertions/traffic_sva.sv(38)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/road_B_green_assert
+                     design/traffic_Assertions/traffic_sva.sv(49)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/road_A_priority_assert
+                     design/traffic_Assertions/traffic_sva.sv(58)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/smart_system_feature_1_assert
+                     design/traffic_Assertions/traffic_sva.sv(67)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/smart_system_feature_2_assert
+                     design/traffic_Assertions/traffic_sva.sv(76)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/smart_system_feature_3_assert
+                     design/traffic_Assertions/traffic_sva.sv(85)
+                                                        0          1
+
+Directive Coverage:
+    Directives                       2         2         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/\tb_top#DUT /traffic_sva_inst/light_algorithm_A_cover 
+                                         traffic_sva Verilog  SVA  design/traffic_Assertions/traffic_sva.sv(99)
+                                                                                66 Covered   
+/\tb_top#DUT /traffic_sva_inst/light_algorithm_B_cover 
+                                         traffic_sva Verilog  SVA  design/traffic_Assertions/traffic_sva.sv(100)
+                                                                                52 Covered   
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         28        28         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\tb_top#DUT /traffic_sva_inst --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                               clk           1           1                              100.00 
+                                           cs[0-3]           1           1                              100.00 
+                                           green_A           1           1                              100.00 
+                                           green_B           1           1                              100.00 
+                                             red_A           1           1                              100.00 
+                                             red_B           1           1                              100.00 
+                                               rst           1           1                              100.00 
+                                          sensor_A           1           1                              100.00 
+                                          sensor_B           1           1                              100.00 
+                                          yellow_A           1           1                              100.00 
+                                          yellow_B           1           1                              100.00 
+
+Total Node Count     =         14 
+Toggled Node Count   =         14 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (28 of 28 bins)
+
+=================================================================================
+=== Instance: /\tb_top#DUT 
+=== Design Unit: work.traffic_light
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20        20         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /\tb_top#DUT 
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File design/traffic_design/traffic_light.v
+------------------------------------CASE Branch------------------------------------
+    44                                      1657     Count coming in to CASE
+    45              1                        154                 0, 1, 2, 3, 4: begin
+    45              2                        156     
+    45              3                        152     
+    45              4                        147     
+    45              5                        132     
+    51              1                        141                 5: begin
+    60              1                        118                 6: begin
+    66              1                        118                 7, 8, 9, 10: begin
+    66              2                        114     
+    66              3                        105     
+    66              4                        106     
+    72              1                        122                 11: begin
+    81              1                         91                 12: begin
+                                               1     All False Count
+Branch totals: 14 hits of 14 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                       141     Count coming in to IF
+    54              1                        104                     if (Sb == 1'b1)
+    56              1                         37                     else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    75                                       122     Count coming in to IF
+    75              1                         91                     if (Sa == 1'b1 | Sb == 1'b0)
+    77              1                         31                     else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    90                                      1026     Count coming in to IF
+    90              1                         74             if(rst)
+    92              1                        952             else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         2         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /\tb_top#DUT  --
+
+  File design/traffic_design/traffic_light.v
+----------------Focused Condition View-------------------
+Line       75 Item    1  (Sa | ~Sb)
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+          Sa         Y
+          Sb         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  Sa_0                  Sb                            
+  Row   2:          1  Sa_1                  Sb                            
+  Row   3:          1  Sb_0                  ~Sa                           
+  Row   4:          1  Sb_1                  ~Sa                           
+
+
+FSM Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    FSM States                      13        13         0   100.00%
+    FSM Transitions                 24        24         0   100.00%
+
+================================FSM Details================================
+
+FSM Coverage for instance /\tb_top#DUT  --
+
+FSM_ID: state
+    Current State Object : state
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  45                 st0                   0
+  45                 st1                   1
+  45                 st2                   2
+  45                 st3                   3
+  45                 st4                   4
+  51                 st5                   5
+  60                 st6                   6
+  66                 st7                   7
+  66                 st8                   8
+  66                 st9                   9
+  66                st10                  10
+  72                st11                  11
+  81                st12                  12
+    Covered States :
+    ----------------
+                   State           Hit_count
+                   -----           ---------
+                     st0                 129          
+                     st1                  90          
+                     st2                  87          
+                     st3                  83          
+                     st4                  82          
+                     st5                  93          
+                     st6                  74          
+                     st7                  70          
+                     st8                  66          
+                     st9                  62          
+                    st10                  59          
+                    st11                  77          
+                    st12                  54          
+    Covered Transitions :
+    ---------------------
+Line            Trans_ID           Hit_count          Transition          
+----            --------           ---------          ----------          
+  48                   0                  90          st0 -> st1                    
+  48                   1                  87          st1 -> st2                    
+  91                   2                   3          st1 -> st0                    
+  48                   3                  83          st2 -> st3                    
+  91                   4                   4          st2 -> st0                    
+  48                   5                  82          st3 -> st4                    
+  91                   6                   1          st3 -> st0                    
+  48                   7                  78          st4 -> st5                    
+  91                   8                   4          st4 -> st0                    
+  55                   9                  74          st5 -> st6                    
+  91                  10                   3          st5 -> st0                    
+  63                  11                  70          st6 -> st7                    
+  91                  12                   4          st6 -> st0                    
+  69                  13                  66          st7 -> st8                    
+  91                  14                   4          st7 -> st0                    
+  69                  15                  62          st8 -> st9                    
+  91                  16                   4          st8 -> st0                    
+  69                  17                  59          st9 -> st10                   
+  91                  18                   3          st9 -> st0                    
+  69                  19                  58          st10 -> st11                  
+  91                  20                   1          st10 -> st0                   
+  76                  21                  54          st11 -> st12                  
+  91                  22                   4          st11 -> st0                   
+  84                  23                  54          st12 -> st0                   
+
+
+    Summary                       Bins      Hits    Misses  Coverage
+    -------                       ----      ----    ------  --------
+        FSM States                  13        13         0   100.00%
+        FSM Transitions             24        24         0   100.00%
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      31        31         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /\tb_top#DUT  --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File design/traffic_design/traffic_light.v
+    1                                                module traffic_light (
+    2                                                    input clk,rst,
+    3                                                    input Sa,
+    4                                                    input Sb,
+    5                                                    output Ra,
+    6                                                    output Rb,
+    7                                                    output Ga,
+    8                                                    output Gb, 
+    9                                                    output Ya,
+    10                                                   output Yb
+    11                                               );
+    12                                               
+    13                                                   reg Ra_tmp;
+    14                                                   reg Rb_tmp;
+    15                                                   reg Ga_tmp;
+    16                                                   reg Gb_tmp;
+    17                                                   reg Ya_tmp;
+    18                                                   reg Yb_tmp;
+    19                                               
+    20                                                   reg [3:0] state;
+    21                                                   reg [3:0] nextstate;
+    22                                               
+    23                                                   parameter [1:0] R = 0;
+    24                                                   parameter [1:0] Y = 1;
+    25                                                   parameter [1:0] G = 2;
+    26                                               
+    27                                               
+    28                                                   assign Ra = Ra_tmp;
+    29                                                   assign Rb = Rb_tmp;
+    30                                                   assign Ga = Ga_tmp;
+    31                                                   assign Gb = Gb_tmp;
+    32                                                   assign Ya = Ya_tmp;
+    33                                                   assign Yb = Yb_tmp;
+    34                                               
+    35              1                       1657         always @(*) begin
+    36              1                       1657             Ra_tmp = 1'b0;
+    37              1                       1657             Rb_tmp = 1'b0;
+    38              1                       1657             Ga_tmp = 1'b0;
+    39              1                       1657             Gb_tmp = 1'b0;
+    40              1                       1657             Ya_tmp = 1'b0;
+    41              1                       1657             Yb_tmp = 1'b0;
+    42              1                       1657             nextstate = 0;
+    43                                               
+    44                                                       case (state)
+    45                                                           0, 1, 2, 3, 4: begin
+    46              1                        741                     Ga_tmp = 1'b1;
+    47              1                        741                     Rb_tmp = 1'b1;
+    48              1                        741                     nextstate = state + 1;
+    49                                                           end
+    50                                               
+    51                                                           5: begin
+    52              1                        141                     Ga_tmp = 1'b1;
+    53              1                        141                     Rb_tmp = 1'b1;
+    54                                                               if (Sb == 1'b1)
+    55              1                        104                         nextstate = 6;
+    56                                                               else
+    57              1                         37                         nextstate = 5;
+    58                                                           end
+    59                                               
+    60                                                           6: begin
+    61              1                        118                     Ya_tmp = 1'b1;
+    62              1                        118                     Rb_tmp = 1'b1;
+    63              1                        118                     nextstate = 7;
+    64                                                           end
+    65                                               
+    66                                                           7, 8, 9, 10: begin
+    67              1                        443                     Ra_tmp = 1'b1;
+    68              1                        443                     Gb_tmp = 1'b1;
+    69              1                        443                     nextstate = state + 1;
+    70                                                           end
+    71                                               
+    72                                                           11: begin
+    73              1                        122                     Ra_tmp = 1'b1;
+    74              1                        122                     Gb_tmp = 1'b1;
+    75                                                               if (Sa == 1'b1 | Sb == 1'b0)
+    76              1                         91                         nextstate = 12;
+    77                                                               else
+    78              1                         31                         nextstate = 11;
+    79                                                           end
+    80                                               
+    81                                                           12: begin
+    82              1                         91                     Ra_tmp = 1'b1;
+    83              1                         91                     Yb_tmp = 1'b1;
+    84              1                         91                     nextstate = 0;
+    85                                                           end
+    86                                                       endcase
+    87                                                   end
+    88                                               
+    89              1                       1026         always @(posedge clk or posedge rst) begin
+    90                                                       if(rst)
+    91              1                         74             state <= 0;
+    92                                                       else
+    93              1                        952             state <= nextstate;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         48        48         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /\tb_top#DUT  --
+
+                                              Node      1H->0L      0L->1H                          "Coverage"
+                                              ---------------------------------------------------------------
+                                                Ga           1           1                              100.00 
+                                            Ga_tmp           1           1                              100.00 
+                                                Gb           1           1                              100.00 
+                                            Gb_tmp           1           1                              100.00 
+                                                Ra           1           1                              100.00 
+                                            Ra_tmp           1           1                              100.00 
+                                                Rb           1           1                              100.00 
+                                            Rb_tmp           1           1                              100.00 
+                                                Sa           1           1                              100.00 
+                                                Sb           1           1                              100.00 
+                                                Ya           1           1                              100.00 
+                                            Ya_tmp           1           1                              100.00 
+                                                Yb           1           1                              100.00 
+                                            Yb_tmp           1           1                              100.00 
+                                               clk           1           1                              100.00 
+                                    nextstate[3-0]           1           1                              100.00 
+                                               rst           1           1                              100.00 
+                                        state[3-0]           1           1                              100.00 
+
+Total Node Count     =         24 
+Toggled Node Count   =         24 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (48 of 48 bins)
+
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/\tb_top#DUT /traffic_sva_inst/light_algorithm_A_cover 
+                                         traffic_sva Verilog  SVA  design/traffic_Assertions/traffic_sva.sv(99)
+                                                                                66 Covered   
+/\tb_top#DUT /traffic_sva_inst/light_algorithm_B_cover 
+                                         traffic_sva Verilog  SVA  design/traffic_Assertions/traffic_sva.sv(100)
+                                                                                52 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 2
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/\tb_top#DUT /traffic_sva_inst/reset_assert
+                     design/traffic_Assertions/traffic_sva.sv(38)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/road_B_green_assert
+                     design/traffic_Assertions/traffic_sva.sv(49)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/road_A_priority_assert
+                     design/traffic_Assertions/traffic_sva.sv(58)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/smart_system_feature_1_assert
+                     design/traffic_Assertions/traffic_sva.sv(67)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/smart_system_feature_2_assert
+                     design/traffic_Assertions/traffic_sva.sv(76)
+                                                        0          1
+/\tb_top#DUT /traffic_sva_inst/smart_system_feature_3_assert
+                     design/traffic_Assertions/traffic_sva.sv(85)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 100.00%
+

@@ -1,5 +1,5 @@
-`ifndef traffic_light_DEFINES_SVH
-`define traffic_light_DEFINES_SVH
+`ifndef traffic_DEFINES_SVH
+`define traffic_DEFINES_SVH
 
     // Basic logic levels
     `define LOW 0

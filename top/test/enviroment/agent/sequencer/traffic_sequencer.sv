@@ -1,14 +1,14 @@
-package traffic_light_sequencer_pkg;
+package traffic_sequencer_pkg;
 
     import uvm_pkg::*,
-           traffic_light_seq_item_pkg::*;
+           traffic_seq_item_pkg::*;
     `include "uvm_macros.svh"
 
-    class traffic_light_sequencer extends uvm_sequencer #(traffic_light_seq_item);
+    class traffic_sequencer extends uvm_sequencer #(traffic_seq_item);
 
-        `uvm_component_utils(traffic_light_sequencer);
+        `uvm_component_utils(traffic_sequencer);
 
-        function new(string name = "traffic_light_sequre", uvm_component parent);
+        function new(string name = "traffic_sequence", uvm_component parent);
             super.new(name,parent);
         endfunction
 
@@ -26,6 +26,6 @@ package traffic_light_sequencer_pkg;
         task run_phase (uvm_phase phase);
             super.run_phase(phase);
         endtask
-    endclass : traffic_light_sequencer
+    endclass : traffic_sequencer
 
-endpackage : traffic_light_sequencer_pkg
+endpackage : traffic_sequencer_pkg
