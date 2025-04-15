@@ -32,7 +32,7 @@ package traffic_test_pkg;
 
             // Retrieve the virtual interface for traffic traffic from the UVM configuration database
             if(!uvm_config_db #(virtual traffic_if)::get(this,"","t_if",t_cnfg.t_if))  
-                `uvm_fatal("build_phase" , " test - Unable to get the traffic virtual interface of the traffic form the configuration database");
+                `uvm_fatal("build_phase" , " test - Unable to get the traffic virtual interface of the traffic from the configuration database");
         
             uvm_config_db # (traffic_config)::set(this , "*" , "CFG",t_cnfg);
         endfunction
